@@ -1,1 +1,2 @@
-gst-launch-1.0 nvcamerasrc ! 'video/x-raw(memory:NVMM), width=(int)1920, height=(int)1080, format=(string)I420, framerate=(fraction)60/1' ! nvvidconv ! 'video/x-raw(memory:NVMM), format=(string)I420' ! fpsdisplaysink text-overlay=false -v
+gst-launch-1.0 nvcamerasrc ! 'video/x-raw(memory:NVMM), width=(int)3840, height=(int)2160, format=(string)I420, framerate=(fraction)60/1' ! nvvidconv ! 'video/x-raw(memory:NVMM), format=(string)I420' ! fpsdisplaysink text-overlay=false -v
+gst-launch-1.0 nvcamerasrc ! 'video/x-raw(memory:NVMM), width=3840, height=2160, format=I420, framerate=30/1' ! nvvidconv flip-method=6 ! 'video/x-raw, width=3840, height=2160, format=I420, framerate=30/1' ! filesink location=test.I420
